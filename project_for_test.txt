@@ -1,0 +1,4 @@
+login: username: admin pass: @Dm1n,
+3 tabs -navigation test, submit form
+validation for 3 fields: name, mail, password (look at .js file)
+горе в дясно има бутон за log out.

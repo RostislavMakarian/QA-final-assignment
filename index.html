@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Photo Tech World - Camera & Gear Hub</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Login Page -->
+<div id="loginPage" class="login-bg">
+  <div class="login-card">
+    <h2>Photo Tech World</h2>
+    <p class="subtitle">Camera & Creator Gear Portal</p>
+    <input id="username" placeholder="Username">
+    <input id="password" type="password" placeholder="Password">
+    <button onclick="login()">Login</button>
+    <div id="loginError" class="error"></div>
+  </div>
+</div>
+
+<!-- Main App -->
+<div id="app" class="app hidden">
+
+  <header class="topbar">
+    <h1>Photo Tech World</h1>
+    <div class="user-area">
+      <span id="userInitials" class="initials"></span>
+      <button class="logout" onclick="logout()">Logout</button>
+    </div>
+  </header>
+
+  <nav class="nav">
+    <button onclick="showPage('cameras')">Cameras</button>
+    <button onclick="showPage('lenses')">Lenses</button>
+    <button onclick="showPage('contact')">Contact</button>
+  </nav>
+
+  <main>
+
+    <!-- Cameras Page -->
+    <section id="cameras" class="page">
+      <div class="hero">
+        <img src="https://www.driftwoodjournals.com/s/img/wp-content/uploads/2024/04/DSLR-Cameras.jpg" alt="Professional Camera">
+        <div class="hero-text">
+          <h2>Professional Cameras</h2>
+          <p>High-end cameras for photographers and filmmakers.</p>
+        </div>
+      </div>
+
+      <div class="grid">
+        <div class="card">
+          <img src="https://cdn.mos.cms.futurecdn.net/uwHcpwnff6LW6AdGCnd9K9.jpg" alt="DSLR">
+          <h3>DSLR Cameras</h3>
+          <p>Reliable performance, full manual control, long battery life.</p>
+        </div>
+        <div class="card">
+          <img src="https://amateurphotographer.com/wp-content/uploads/sites/7/2024/10/CA_Chisom-Okoye_X-M5_25.jpg?w=900" alt="Mirrorless">
+          <h3>Mirrorless Cameras</h3>
+          <p>Compact design, advanced autofocus, high-quality video recording.</p>
+        </div>
+        <div class="card">
+          <img src="https://images.ctfassets.net/bht415zek091/41wR8dFq1bTp2Wt23cunSW/d3acb7b2e6bbc7ff59182bbe531c789b/Copy-of-Cine-Shoot-October-2nd-171-web.jpg" alt="Cinema Camera">
+          <h3>Cinema Cameras</h3>
+          <p>Professional-grade video capture for cinematic projects.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Lenses Page -->
+    <section id="lenses" class="page hidden">
+      <div class="hero">
+        <img src="https://www.shutterstock.com/blog/wp-content/uploads/sites/5/2015/01/featuredlenses.jpg" alt="Camera Lenses">
+        <div class="hero-text">
+          <h2>Camera Lenses</h2>
+          <p>High-quality lenses for all types of photography.</p>
+        </div>
+      </div>
+
+      <div class="grid">
+        <div class="card">
+          <img src="https://cdn.mos.cms.futurecdn.net/8N75Qn3KQfbUSMmtwdJg2n.jpg" alt="Wide Angle Lens">
+          <h3>Wide Angle Lenses</h3>
+          <p>Capture landscapes, architecture, and group shots perfectly.</p>
+        </div>
+        <div class="card">
+          <img src="https://static.bhphotovideo.com/explora/sites/default/files/styles/960/public/A-Guide-to-Choosing-the-Perfect-Portrait-Lens-ts_1.jpg?itok=Bazd4I5G" alt="Portrait Lens">
+          <h3>Portrait Lenses</h3>
+          <p>Professional background blur, ideal for portraits and creative photography.</p>
+        </div>
+        <div class="card">
+          <img src="https://www.adorama.com/alc/wp-content/uploads/2022/09/joshua-hoehne-LkchRtiktos-unsplash.jpg" alt="Telephoto Lens">
+          <h3>Telephoto Lenses</h3>
+          <p>Zoom in on distant subjects with perfect clarity. Excellent for wildlife photography.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Page -->
+    <section id="contact" class="page hidden">
+      <div class="form-container">
+        <h2>Contact Photo Tech World</h2>
+
+        <form onsubmit="submitForm(event)">
+          <label>Name</label>
+          <input id="name" required>
+          <div id="nameError" class="error"></div>
+
+          <label>Email</label>
+          <input id="email" oninput="validateEmail()">
+          <div id="emailError" class="error"></div>
+
+          <label>Telephone</label>
+          <input id="phone" oninput="validatePhone()">
+          <div id="phoneError" class="error"></div>
+
+          <label>Message</label>
+          <textarea id="message"></textarea>
+
+          <button type="submit">Send Message</button>
+          <div id="formSuccess" class="success"></div>
+        </form>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
