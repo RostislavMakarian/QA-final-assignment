@@ -11,7 +11,7 @@ from selenium.webdriver.support import expected_conditions as EC
 def driver():
     driver = webdriver.Chrome()
     driver.maximize_window()
-    driver.get("file:///C:/Projects/QA final assignment/index.html")
+    driver.get("http://localhost:8000/index.html")
     yield driver
     driver.quit()
 
